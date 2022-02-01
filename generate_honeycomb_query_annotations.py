@@ -13,8 +13,8 @@ dataset_var_name = sys.argv[2]
 def build_query_resource_block(name):
     return (
 f'''resource "honeycombio_query" "{name}" {{
-    dataset=var.{dataset_var_name}
-    query_json=data.honeycombio_query_specification.{name}.json
+    dataset     = var.{dataset_var_name}
+    query_json  = data.honeycombio_query_specification.{name}.json
 }}\n\n''')
 
 def build_query_annotation_resource_block(name):
